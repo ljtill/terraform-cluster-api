@@ -1,0 +1,23 @@
+{
+    "name": "Cluster API",
+    "image": "mcr.microsoft.com/devcontainers/base:jammy",
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/devcontainers/features/terraform:1": {}
+    },
+    "postCreateCommand": "bash .devcontainer/install.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "hashicorp.terraform",
+                "ms-azuretools.vscode-azureterraform",
+                "ms-kubernetes-tools.vscode-aks-tools",
+                "ms-kubernetes-tools.vscode-kubernetes-tools",
+                "ms-vscode.azure-account",
+                "ms-vscode.azurecli",
+                "redhat.vscode-yaml",
+                "weaveworks.vscode-gitops-tools"
+            ]
+        }
+    }
+}
