@@ -1,18 +1,18 @@
 version: 2
 updates:
   - package-ecosystem: "terraform"
-    directory: "/"
+    directory: "/resources/"
     schedule:
       interval: "daily"
   - package-ecosystem: "terraform"
-    directory: "/modules/bootstrap"
+    directory: "/resources/modules/bootstrap"
     schedule:
       interval: "daily"
   - package-ecosystem: "terraform"
-    directory: "/modules/cluster"
+    directory: "/resources/modules/cluster"
     schedule:
       interval: "daily"
   - package-ecosystem: "terraform"
-    directory: "/modules/services"
+    directory: "/resources/modules/services"
     schedule:
       interval: "daily"
