@@ -9,7 +9,7 @@ spec:
   targetNamespace: flux-system
   sourceRef:
     kind: GitRepository
-    name: flux
+    name: flux-system
     namespace: flux-system
   path: manifests/cert-manager
   prune: true
