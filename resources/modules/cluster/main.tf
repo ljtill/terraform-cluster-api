@@ -10,6 +10,8 @@ resource "azurerm_kubernetes_cluster" "main" {
   dns_prefix                = var.cluster.resource_name
   sku_tier                  = "Standard"
   automatic_channel_upgrade = var.cluster.upgrade_channel
+  workload_identity_enabled = true
+  oidc_issuer_enabled       = true
 
   default_node_pool {
     name                        = "nodepool1"
