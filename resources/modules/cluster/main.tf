@@ -11,6 +11,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   sku_tier                  = "Standard"
   automatic_channel_upgrade = var.cluster.upgrade_channel
   workload_identity_enabled = true
+  oidc_issuer_enabled       = true
 
   default_node_pool {
     name                        = "nodepool1"
