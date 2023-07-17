@@ -10,7 +10,7 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  path: manifests/cert-manager
+  path: manifests/services/cert-manager
   prune: true
   wait: false
 ---
@@ -21,10 +21,12 @@ metadata:
   namespace: cluster-config
 spec:
   interval: 5m
+  dependsOn:
+    - name: cert-manager
   sourceRef:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  path: manifests/cluster-api
+  path: manifests/services/cluster-api
   prune: true
   wait: false
