@@ -3,5 +3,5 @@
 #
 
 resource "flux_bootstrap_git" "main" {
-  path = "manifests"
+  path = "clusters/management"
 }
