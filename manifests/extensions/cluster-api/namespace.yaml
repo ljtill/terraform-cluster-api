@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: capi-system
+  name: capi-core-system
 ---
 apiVersion: v1
 kind: Namespace
@@ -17,7 +17,7 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: capz-system
+  name: capi-azure-system
 ---
 apiVersion: v1
 kind: Namespace
