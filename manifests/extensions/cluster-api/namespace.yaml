@@ -7,12 +7,12 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: capi-kubeadm-bootstrap-system
+  name: capi-bootstrap-system
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: capi-kubeadm-controlplane-system
+  name: capi-controlplane-system
 ---
 apiVersion: v1
 kind: Namespace
