@@ -22,4 +22,4 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: capz-clusters
+  name: capi-clusters
