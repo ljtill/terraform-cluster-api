@@ -1,0 +1,47 @@
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: AzureManagedControlPlane
+metadata:
+  name: ""
+  namespace: capi-workload-clusters
+spec:
+  version: v1.24.9
+  resourceGroupName: ""
+  subscriptionID: ""
+  location: ""
+  sshPublicKey: ""
+  networkPlugin: kubenet
+  identityRef:
+    apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+    kind: AzureClusterIdentity
+    name: ""
+    namespace: capi-workload-clusters
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: AzureManagedCluster
+metadata:
+  name: ""
+  namespace: capi-workload-clusters
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: AzureManagedMachinePool
+metadata:
+  name: ""
+  namespace: capi-workload-clusters
+spec:
+  mode: System
+  sku: standard_d8s_v5
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: AzureClusterIdentity
+metadata:
+  name: ""
+  namespace: capi-workload-clusters
+spec:
+  type: WorkloadIdentity
+  clientID: ""
+  tenantID: ""
+  allowedNamespaces:
+    list:
+      - capi-azure-system
+      - capi-workload-clusters
