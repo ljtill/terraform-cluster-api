@@ -11,6 +11,8 @@ The purpose of the repository is to:
 
 Through the use of Flux, we’re able to deploy workload clusters quickly after pull requests are merged. You can use this repository as a template or a reference for your own Cluster API projects on Azure.
 
+_Please note this repository is under development and subject to change._
+
 ## Repository structure
 
 - `clusters` - Kustomize manifests for cluster components
@@ -21,7 +23,7 @@ Through the use of Flux, we’re able to deploy workload clusters quickly after 
 
 ## Getting Started
 
-### Deploy Management Cluster*
+### Deploy Management Cluster
 
 1. Navigate to the `resources` directory
 2. Update the `resource_name` and `location` properties in `locals.tf` file
@@ -32,7 +34,7 @@ Through the use of Flux, we’re able to deploy workload clusters quickly after 
 7. Deploy Terraform resources `terraform deploy`
 8. Authenticate Kubernetes context `az aks get-credentials -g '{ResourceGroup}' -n {Name}`
 
-*Configuring Terraform State Storage has been omitted for brevity
+Configuring Terraform State Storage has been omitted for brevity
 
 ### Create Cluster Federation
 
@@ -46,12 +48,10 @@ Through the use of Flux, we’re able to deploy workload clusters quickly after 
    - Service account name "capz-manager"
 6. Create Role Assignment for the Application at the Subscription scope with 'Owner' permissions
 
-### Provision Workload Clusters*
+### Provision Workload Clusters
 
 1. Navigate to the `manifest/config` directory
 2. Update the `data` properties with desired values
 3. Deploy Kubernetes manifest `kubectl apply -f workloads.yaml`
 
-*Configuration of Workloads settings can also be deployed by Flux
-
-__Please note this repository is under development and subject to change.__
+Configuration of Workloads settings can also be deployed by Flux
