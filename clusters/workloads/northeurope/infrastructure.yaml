@@ -2,31 +2,31 @@
 apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: AzureManagedControlPlane
 metadata:
-  name: ${northeurope.name}
+  name: ${north_europe_cluster_name}
   namespace: capi-workload-clusters
 spec:
   version: v1.24.9
-  resourceGroupName: ${global.resourceGroup}
-  subscriptionID: ${global.name}
+  resourceGroupName: ${global_resource_group}
+  subscriptionID: ${global_name}
   location: northeurope
-  sshPublicKey: ${global.publicKey}
+  sshPublicKey: ${global_public_key}
   networkPlugin: kubenet
   identityRef:
     apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
     kind: AzureClusterIdentity
-    name: ${northeurope.name}
+    name: ${north_europe_cluster_name}
     namespace: capi-workload-clusters
 ---
 apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: AzureManagedCluster
 metadata:
-  name: ${northeurope.name}
+  name: ${north_europe_cluster_name}
   namespace: capi-workload-clusters
 ---
 apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: AzureManagedMachinePool
 metadata:
-  name: ${northeurope.name}
+  name: ${north_europe_cluster_name}
   namespace: capi-workload-clusters
 spec:
   mode: System
@@ -35,12 +35,12 @@ spec:
 apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: AzureClusterIdentity
 metadata:
-  name: ${northeurope.name}
+  name: ${north_europe_cluster_name}
   namespace: capi-workload-clusters
 spec:
   type: WorkloadIdentity
-  clientID: ${global.clientId}
-  tenantID: ${global.tenantId}
+  clientID: ${global_client_id}
+  tenantID: ${global_tenant_id}
   allowedNamespaces:
     list:
       - capi-azure-system
