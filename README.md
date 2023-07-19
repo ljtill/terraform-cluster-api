@@ -21,7 +21,7 @@ Through the use of Flux, we’re able to deploy workload clusters quickly after 
 
 ## Getting Started
 
-Deploy Management Cluster*
+### Deploy Management Cluster*
 
 1. Navigate to the `resources` directory
 2. Update the `resource_name` and `location` properties in `locals.tf` file
@@ -34,7 +34,7 @@ Deploy Management Cluster*
 
 *Configuring Terraform State Storage has been omitted for brevity
 
-Create Cluster Federation
+### Create Cluster Federation
 
 1. Browse to the [Entra admin center](https://entra.microsoft.com/)
 2. Create App registration
@@ -46,7 +46,7 @@ Create Cluster Federation
    - Service account name "capz-manager"
 6. Create Role Assignment for the Application at the Subscription scope with 'Owner' permissions
 
-Provision Workload Clusters*
+### Provision Workload Clusters*
 
 1. Navigate to the `manifest/config` directory
 2. Update the `data` properties with desired values
