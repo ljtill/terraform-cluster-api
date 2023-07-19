@@ -23,6 +23,13 @@ _Please note this repository is under development and subject to change._
 
 ## Getting Started
 
+### Generate Deployment Keys
+
+1. Create `.ssh/` directory
+2. Invoke `ssh-keygen -t ed25519 -C "your_email@example.com"`
+3. Invoke `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+4. Add the `id_ed25519.pub` file to your repository as "Deploy keys"
+
 ### Deploy Management Cluster
 
 1. Navigate to the `resources` directory
@@ -46,12 +53,17 @@ Configuring Terraform State Storage has been omitted for brevity
    - Cluster issuer URL `az aks show -g '{ResourceGroup}' -n '{Name}' --query 'oidcIssuerProfile.issuerUrl'`
    - Namespace "capi-azure-system"
    - Service account name "capz-manager"
-6. Create Role Assignment for the Application at the Subscription scope with 'Owner' permissions
+6. Browse to the [Azure portal](https://portal.azure.com)
+6. Navigate to the desired Subscription
+7. Select 'Access control (IAM)' and 'Add role assignment'
+8. Select Role - Owner and select 'Members'
+9. Provide the 'Name' of the application from the previous steps
 
 ### Provision Workload Clusters
 
 1. Navigate to the `manifest/config` directory
 2. Update the `data` properties with desired values
+   - `global_public_key` needs to be base64 encoded version of `id_rsa.pub`
 3. Deploy Kubernetes manifest `kubectl apply -f workloads.yaml`
 
 Configuration of Workloads settings can also be deployed by Flux
