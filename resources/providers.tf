@@ -25,7 +25,7 @@ provider "flux" {
     author_name  = "fluxcdbot"
     ssh = {
       username    = "git"
-      private_key = file(".ssh/id_ed25519")
+      private_key = file("../.ssh/id_ed25519")
     }
   }
 
