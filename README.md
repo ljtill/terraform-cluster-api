@@ -40,10 +40,10 @@ Create Cluster Federation
 2. Create App registration
 3. Navigate to "Certificates & Secrets"
 4. Add Federated credential “Kubernetes accessing Azure resources”
-5. Provide cluster details:
-  - Cluster issuer URL `az aks show -g '{ResourceGroup}' -n '{Name}' --query 'oidcIssuerProfile.issuerUrl'`
-  - Namespace "capi-azure-system"
-  - Service account name "capz-manager"
+5. Update cluster details:
+   - Cluster issuer URL `az aks show -g '{ResourceGroup}' -n '{Name}' --query 'oidcIssuerProfile.issuerUrl'`
+   - Namespace "capi-azure-system
+   - Service account name "capz-manager"
 
 Provision Workload Clusters*
 
