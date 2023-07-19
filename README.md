@@ -23,7 +23,7 @@ The repository structure is as follows:
 
 ## Getting Started
 
-Deploy Management Cluster
+Deploy Management Cluster*
 
 1. Navigate to the `resources` directory
 2. Update the `resource_name` and `location` properties in `locals.tf` file
@@ -34,6 +34,8 @@ Deploy Management Cluster
 7. Deploy Terraform resources `terraform deploy`
 8. Authenticate Kubernetes context `az aks get-credentials -g '{ResourceGroup}' -n {Name}`
 
+*Configuring Terraform State Storage has been omitted for brevity
+
 Create Cluster Federation
 
 1. Browse to the [Entra admin center](0)
@@ -42,7 +44,7 @@ Create Cluster Federation
 4. Add Federated credential “Kubernetes accessing Azure resources”
 5. Update cluster details:
    - Cluster issuer URL `az aks show -g '{ResourceGroup}' -n '{Name}' --query 'oidcIssuerProfile.issuerUrl'`
-   - Namespace "capi-azure-system
+   - Namespace "capi-azure-system"
    - Service account name "capz-manager"
 
 Provision Workload Clusters*
@@ -51,6 +53,6 @@ Provision Workload Clusters*
 2. Update the `data` properties with desired values
 3. Deploy Kubernetes manifest `kubectl apply -f workloads.yaml`
 
-*The configuration for the workloads is manually deployed but this could be handled by Flux.
+*Configuration of Workloads settings can also be deployed by Flux
 
 __Please note this repository is under development and subject to change.__
