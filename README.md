@@ -11,13 +11,13 @@ The purpose of the repository is to:
 
 Through the use of Flux, we’re able to deploy workload clusters quickly after pull requests are merged. You can use this repository as a template or a reference for your own Cluster API projects on Azure.
 
-The repository structure is as follows:
+## Repository structure
 
 - `clusters` - Kustomize manifests for cluster components
   - `management` - Platform management cluster
   - `workloads` - Distributed workload clusters
 - `manifests` - Re-usable Kubernetes manifests for all clusters
-- `resources` - Terraform files for deploying the Management cluster
+- `resources` - Terraform files for deploying the management cluster
 
 ## Getting Started
 
