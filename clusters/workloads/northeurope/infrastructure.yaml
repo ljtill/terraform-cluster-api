@@ -7,7 +7,7 @@ metadata:
 spec:
   version: v1.24.9
   resourceGroupName: ${global_resource_group}
-  subscriptionID: ${global_name}
+  subscriptionID: ${global_subscription_id}
   location: northeurope
   sshPublicKey: ${global_public_key}
   networkPlugin: kubenet
