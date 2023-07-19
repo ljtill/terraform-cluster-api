@@ -36,7 +36,7 @@ Deploy Management Cluster*
 
 Create Cluster Federation
 
-1. Browse to the [Entra admin center](0)
+1. Browse to the [Entra admin center](https://entra.microsoft.com/)
 2. Create App registration
 3. Navigate to "Certificates & Secrets"
 4. Add Federated credential “Kubernetes accessing Azure resources”
@@ -44,6 +44,7 @@ Create Cluster Federation
    - Cluster issuer URL `az aks show -g '{ResourceGroup}' -n '{Name}' --query 'oidcIssuerProfile.issuerUrl'`
    - Namespace "capi-azure-system"
    - Service account name "capz-manager"
+6. Create Role Assignment for the Application at the Subscription scope with 'Owner' permissions
 
 Provision Workload Clusters*
 
