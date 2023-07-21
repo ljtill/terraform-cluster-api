@@ -4,15 +4,3 @@ updates:
     directory: "/resources/"
     schedule:
       interval: "daily"
-  - package-ecosystem: "terraform"
-    directory: "/resources/modules/bootstrap"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "terraform"
-    directory: "/resources/modules/cluster"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "terraform"
-    directory: "/resources/modules/services"
-    schedule:
-      interval: "daily"
